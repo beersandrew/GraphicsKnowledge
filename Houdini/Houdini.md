@@ -40,3 +40,10 @@ float sinFactor = fit(sin(d - @Time * 10), -1, 1, 0, 1);
 @Cd = (1 - sinFactor) * {1, 1, 0} + sinFactor * {0, 1, 0};
 ```
 - Y position instead of color? @P.y = ...
+
+### Day 3
+
+- more clamp and fit examples
+- making sin fit on 3d objects -> add normal to points
+- adding sin before / after / in between fit / clamp changes where the waves start and end
+
