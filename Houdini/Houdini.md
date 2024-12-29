@@ -9,6 +9,10 @@
 
 ## Joy of VEX
 
+### Links
+- Home : [here](https://www.tokeru.com/cgwiki/JoyOfVex.html)
+- Vex Functions: [here](https://www.sidefx.com/docs/houdini/vex/functions/index.html)
+
 ### Day 1
 - @Cd = @P, Color at this point equals the position vector at this point
 - @Cd = @N, Color at this point equals the normal vector at this point
@@ -46,4 +50,24 @@ float sinFactor = fit(sin(d - @Time * 10), -1, 1, 0, 1);
 - more clamp and fit examples
 - making sin fit on 3d objects -> add normal to points
 - adding sin before / after / in between fit / clamp changes where the waves start and end
+- it's possible to have multiple sin pool sources
 
+```
+vector origin1 = {5, 0, 0};
+vector origin2 = {-5, 0, 0};
+float d1 = length(@P - origin1);
+float d2 = length(@P - origin2);
+d1 *= ch('v_scale');
+d2 *= ch('v_scale');
+
+float speed = ch('wave_speed');
+
+float wave1 = sin(d1 - speed * @Time);
+float wave2 = sin(d2 - speed * @Time);
+
+@P.y = wave1 * wave2;
+```
+
+final line can be +, -, *... giving different variations
+
+- Everthing done in Vex can be done in VOPs as well, slightly different feeling / organizational process
