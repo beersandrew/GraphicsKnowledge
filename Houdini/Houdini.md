@@ -71,3 +71,10 @@ float wave2 = sin(d2 - speed * @Time);
 final line can be +, -, *... giving different variations
 
 - Everthing done in Vex can be done in VOPs as well, slightly different feeling / organizational process
+
+
+### Day 4
+
+- chramp gives a lot of flexibility on how values change over time
+- very easy and interesting patterns, not only updating positions but colors / anything
+- quickly get tons of channels, need to understand better channel maintanence / clarity
